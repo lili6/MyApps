@@ -6,15 +6,24 @@ Ext.define('BISM.view.Viewport', {
         {
             xtype: 'panel',
             region: 'north',
-            //html: 'The future Menu Bar goes here',
+            html: 'The future Menu Bar goes here',
             split: true,
+            border:1,
             items : [ 
                 { xtype: 'button', text: 'Main Menu', items: [{ text: 'One'}]},
-                { xtype: 'menu',
+                { xtype: 'button', text: 'Main Menu2', items: [{ text: 'One'}]
+
+/*                {
+                    xtype: 'menu',
+                    items: [{text: 'Item1'},
+                        {text: 'Item2'},
+                        {text: 'Item3'}
+                    ]
+                },{ xtype: 'menu',
                     items: [{ text: 'Item1'},
                         { text: 'Item2'},
                         { text: 'Item3'}
-                    ]                    
+                    ]*/
             }],
             layout: 'hbox'
 //            collapsible: true

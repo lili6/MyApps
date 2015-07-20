@@ -1,10 +1,7 @@
 package bism.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,7 +41,19 @@ public class PartsController {
         mMap.put(mParts.indexOf(p1), p1.partid);
         LOG.setLevel(Level.ALL);
     }
+    // URI:	http://localhost:8080/SpringMVC-RESTful-Json/hi
+    @RequestMapping(value = "/hi", produces = "text/plain;charset=UTF-8")
+    public @ResponseBody
+    String hello() {
+//        logger.info("测试hi");
+        return "Hello World !!!";
+    }
 
+    @RequestMapping(value="/" ,produces = "text/plain;charset=UTF-8")
+    public @ResponseBody List<Part> getParts() {
+    	LOG.log(Level.INFO, "GET request");
+    	return mParts;
+    }
     @RequestMapping( method= RequestMethod.GET)
     public List<Part> getAllParts() {
     	LOG.log(Level.INFO, "GET request");

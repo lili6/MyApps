@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //import org.springframework.data.annotation.Id;
 
 @XmlRootElement
-class Part implements Serializable{
+public class Part implements Serializable{
   
 	private static final long serialVersionUID = 1L;
 //	@Id
